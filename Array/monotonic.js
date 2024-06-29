@@ -19,7 +19,7 @@ function monotonic(array){
             if(array[i+1]<array[i]) return false;
     }
 }
- // case 3: first >last 
+ // case 3:first>last 
           else  {
             for (let i= 0; i< array.length-1; i++) {
                 
@@ -32,4 +32,4 @@ function monotonic(array){
 
 }
 
-console.log(monotonic([1,2,3,4,7,4]));
+console.log(monotonic([1,1,2,2]));
