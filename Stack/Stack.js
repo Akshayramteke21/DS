@@ -1,14 +1,23 @@
-const data = [];
-const max = 5;
+let data = [];
+
+let max = 5;
+
 let currentSize = data.length;
 
-function push(newval) {
+function Push() {
+  let newEl = document.getElementById("insert").value;
   if (currentSize > max) {
-    console.log("Max stack exceded");
+    console.log("Max size excedded");
   }
 
-  data[currentSize] = newval;
-  currentSize += 1;
+  else{
+    data[currentSize] = newEl;
+  currentSize++; 
+
+ document.getElementById('insert').value=""
+ console.log("Element added successfully");
+  }
+ 
 }
 
 function pop() {
@@ -17,19 +26,22 @@ function pop() {
 
     data.length = currentSize;
   }
+  else{
+    console.log("stack already empty");
+  }
 }
-console.log("pushing elements",data);
-push(10);
-push(22);
-push(44);
-console.log("data:",data);
 
-push(55);
-console.log("before pop",data);
+function display() {
+  for (let i = 0; i <= currentSize - 1; i++) {
+    console.log( 'element at' ,i, 'is ',data[i]);
+  }
+}
+
+Push(5);
+Push(10);
+Push(15);
+Push(20);
+Push(25);
+console.log(data);
 pop();
-pop();
-
-
-
-console.log("popping out last element");
 console.log(data);
